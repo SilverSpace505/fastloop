@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FastLoop</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <script type="module" src="/src/main.ts"></script>
+    
+    <div id="menu">
+      <h1 id="title">Fastloop</h1>
+
+      <div id="buttons">
+        <button id="play"><span>Play</span></button>
+        <p id="besttimemenu"></p>
+      </div>
+
+      <div id="leaderboard">
+        <div id="leaderboard-top">
+          <p id="leaderboard-title">Leaderboard</p>
+          <input type="text" id="username" placeholder="Username" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-]/g, '');" maxlength="12">
+        </div>
+        <div id="controls">  
+          <button id="left"><span>&lt;</span></button>
+          <div id="page">Page 1</div>
+          <button id="right"><span>></span></button>
+        </div>
+        <div id="times"></div>
+       
+      </div>
+    </div>
+
+    <div id="game">
+      <p id="time">TIME: </p>
+      <p id="besttime"></p>
+      <p id="lasttime"></p>
+
+      <div class="topright"><button id="menubtn"><span>Menu</span></button></div>
+    </div>
+
+    <div id='performance'>
+      <p id='fps'>FPS: </p>
+    </div>
+  </body>
+</html>

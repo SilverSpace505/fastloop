@@ -1,0 +1,284 @@
+
+@font-face {
+  font-family: font;
+  src: url(/font.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}
+
+canvas {
+  position: absolute;
+}
+
+#performance {
+  z-index: 1;
+  position: absolute;
+  margin: 0;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 0 0 10px 0;
+  display: none;
+}
+
+#fps {
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+  font-size: 10px;
+  color: white;
+  font-family: sans-serif;
+}
+
+#menu, #game {
+  margin: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0;
+}
+
+#game {
+  display: none;
+}
+
+#title {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 80px;
+  font-family: font;
+  color: white;
+  text-shadow: 5px 5px 10px rgb(0, 127, 255);
+}
+
+#buttons {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 250px;
+  height: 75px;
+  font-size: 55px;
+  text-shadow: 3px 3px 8px rgb(0, 127, 255);
+  font-family: font;
+  background-color: rgba(75, 75, 75, 0.5);
+  color: white;
+  border: 5px solid rgba(75, 75, 75, 0.5);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+button span {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  bottom: 0;
+}
+
+button:hover {
+  width: 235px;
+  height: 70px;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+}
+
+button:hover span {
+  bottom: 3px;
+}
+
+#time, #besttime, #lasttime, #besttimemenu, #leaderboard-title {
+  position: relative;
+  padding: 0;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: white;
+  font-family: font;
+  font-size: 45px;
+  text-shadow: 3px 3px 8px rgb(0, 127, 255);
+}
+
+#besttimemenu {
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+  top: 10px;
+}
+
+#besttime, #lasttime {
+  font-size: 30px;
+  margin-top: 5px;
+  line-height: 27.5px;
+}
+
+.topright {
+  position: absolute;
+  margin: 10px;
+  top: -10px;
+  right: -10px;
+  width: 275px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#leaderboard {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(75, 75, 75, 0.7);
+  border: 5px solid rgba(75, 75, 75, 0.7);
+  width: 400px;
+  height: 500px;
+  right: 15px;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-radius: 20px;
+}
+
+#leaderboard-top {
+  position: relative;
+  top: -100px;
+  margin: 0;
+  text-align: center;
+  padding: 0;
+}
+
+#leaderboard-title {
+  margin: 0;
+}
+
+#username {
+  width: 300px;
+  height: 25px;
+  text-align: center;
+  background-color: rgba(75, 75, 75, 0.5);
+  border: 5px solid rgba(75, 75, 75, 0.5);
+  border-radius: 20px;
+  color: white;
+  font-family: font;
+  font-size: 20px;
+  text-shadow: 1.5px 1.5px 4px rgb(0, 127, 255);
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 430px;
+}
+
+#page, #left, #right {
+  color: white;
+  font-family: font;
+  font-size: 35px;
+  text-shadow: 1.5px 1.5px 4px rgb(0, 127, 255);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background-color: rgba(75, 75, 75, 0.5);
+  border: 5px solid rgba(75, 75, 75, 0.5);
+  border-radius: 20px;
+  text-align: center;
+}
+
+#left, #right {
+  width: 55px;
+  height: 55px;
+}
+
+#left:hover, #right:hover {
+  width: 50px;
+  height: 50px;
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+}
+
+#left:active, #right:active {
+  width: 45px;
+  height: 45px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#left:hover span, #right:hover span {
+  bottom: 1.5px;
+}
+
+#left:active span, #right:active span {
+  bottom: -1px;
+}
+
+#times {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -143.75px;
+}
+
+#ltimediv {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(75, 75, 75, 0.7);
+  border-radius: 10px;
+  padding: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#ltimediv p {
+  color: white;
+  font-family: font;
+  line-height: 5px;
+  text-shadow: 1.5px 1.5px 4px rgb(0, 127, 255);
+}
+
+#rank {
+  position: relative;
+  text-align: left;
+  left: 10px;
+  font-size: 19.75px;
+}
+
+#lusername {
+  position: absolute;
+  text-align: center;
+  left: 195px;
+  transform: translate(-50%, 0);
+  font-size: 19.75px;
+}
+
+#ltime {
+  position: absolute;
+  text-align: right;
+  right: 15px;
+  font-size: 19.75px;
+}
